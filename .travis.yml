@@ -3,6 +3,7 @@ language: java
 jdk:
   - oraclejdk8
 script: mvn clean test
+script: find . -name "*.jar"
 #before_install: cd ProtocolLib
 install: true
 
