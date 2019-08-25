@@ -2,7 +2,7 @@ dist: trusty
 language: java
 jdk:
   - oraclejdk8
-script: mvn clean test &&  find . -name "*.jar"
+script: mvn clean test &&  ls
 #before_install: cd ProtocolLib
 install: true
 
