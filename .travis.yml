@@ -1,12 +1,17 @@
+dist: trusty
 language: java
 jdk:
   - oraclejdk8
 script: mvn clean test
 #before_install: cd ProtocolLib
 install: true
-notifications:
-  email:
-    recipients:
-      - "dmulloy2@live.com"
-    on_success: change
-    on_failure: always
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GH_TOKEN
+  file_glob: true
+  file:
+    - "ProtocolLib*/modules/ProtocolLib/target/*.jar"
+  on:
+    tags: true
