@@ -2,7 +2,7 @@ dist: trusty
 language: java
 jdk:
   - oraclejdk8
-script: mvn clean test &&  ls
+script: mvn clean test &&  ls modules/ProtocolLib/target/
 #before_install: cd ProtocolLib
 install: true
 
@@ -12,6 +12,6 @@ deploy:
   api_key: $GH_TOKEN
   file_glob: true
   file:
-    - "ProtocolLib*/modules/ProtocolLib/target/*.jar"
+    - "modules/ProtocolLib/target/*.jar"
   on:
     tags: true
